@@ -36,13 +36,14 @@ const CoinContext = (props) => {
         break;
 
       default:
+        setCurrency({ currency: "USD", symbol: "$" });
         break;
     }
 
-    return () => {
-      second;
-    };
-  }, [third]);
+    // return () => {
+    //   setCurrency();
+    // };
+  }, [currency.currency]);
 
   return (
     <Crypto.Provider value={{ currency, setCurrency }}>
