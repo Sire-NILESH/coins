@@ -142,7 +142,7 @@ const SideBar = () => {
   // }
 
   return (
-    <div className="flex font-poppins flex-col w-64 h-[95vh] py-8 bg-white bg-neumorphic-compos ml-10 border-t-2 border-l-4 border-white border-r dark:bg-gray-900 dark:border-gray-700 text-center">
+    <div className="flex font-poppins flex-col w-64 h-[95vh] py-8 bg-white bg-neumorphic-compos border-t-2 border-l-4 border-white border-r dark:bg-gray-900 dark:border-gray-700 text-center">
       <Brand />
 
       <div className="flex flex-col items-center mt-6 -mx-2">

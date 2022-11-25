@@ -1,7 +1,8 @@
-import React, { useState } from "react";
+import React from "react";
 
 function numberWithCommas(x) {
-  return x.toString().replace(/\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g, ",");
+  const val = x > 0 ? Math.ceil(x) : Math.floor(x);
+  return val.toString().replace(/\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g, ",");
 }
 
 const TableRowData = (props) => {
@@ -20,11 +21,16 @@ const TableRowData = (props) => {
   );
 };
 
+// h-80
+
 const SingleCoinComponenet = (props) => {
   return (
-    <div className="w-80 rounded-md h-80 2border-2 border-black flex gap-4 flex-col">
+    <figure className=" rounded-md  2border-2 border-black flex gap-4 flex-col">
       {/* TITLE */}
-      <p className="font-bold text-lg text-slate-6500">{props.data.name}</p>
+      <p className="font-bold text-lg text-slate-600">
+        <span>{`#${props.data.market_cap_rank} `}</span>
+        {props.data.name}
+      </p>
       {/* GRAPH */}
       <div className="flex-[2] bg-blue-100">graph</div>
       {/* RELATED DATA */}
@@ -40,7 +46,20 @@ const SingleCoinComponenet = (props) => {
         />
         <TableRowData title={"Max supply"} value={props.data.max_supply} />
       </div>
-    </div>
+      {/* 24 Hrs stat */}
+      <div>
+        <p className="font-bold text-sm text-slate-500">Past 24 Hours</p>
+        <div className="flex-1 space-y-1">
+          <TableRowData title={"Price"} value={props.data.price_change_24h} />
+          <TableRowData
+            title={"Market cap"}
+            value={props.data.market_cap_change_24h}
+          />
+          <TableRowData title={"High"} value={props.data.high_24h} />
+          <TableRowData title={"Low"} value={props.data.low_24h} />
+        </div>
+      </div>
+    </figure>
   );
 };
 

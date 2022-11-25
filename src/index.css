@@ -50,3 +50,26 @@ code {
   }
 }
 /* ----------------/Error page-------------------- */
+
+/* -----------------Scrollbar-------------------- */
+/* width */
+::-webkit-scrollbar {
+  width: 2px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f2f2ff;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: rgb(83, 215, 255);
+  border-radius: 100px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: rgb(27, 200, 253);
+}
+/* ----------------/Scrollbar-------------------- */

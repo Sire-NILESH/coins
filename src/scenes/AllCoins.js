@@ -38,9 +38,15 @@ const AllCoins = () => {
   console.log(currency);
 
   return (
-    <div className="w-[75%] bg-neumorphic border-t-2 border-l-4 border-white border-r">
+    // <div className="w-[75%] bg-neumorphic border-t-2 border-l-4 border-white border-r px-4">
+    <div className="h-full w-full">
       AllCoins
-      <SingleCoinComponenet data={data} />
+      <div className="grid md:grid-cols-2 lg:grid-cols-4 md:gap-8 lg:gap-16">
+        <SingleCoinComponenet data={data} />
+        <SingleCoinComponenet data={data} />
+        <SingleCoinComponenet data={data} />
+        <SingleCoinComponenet data={data} />
+      </div>
     </div>
   );
 };
