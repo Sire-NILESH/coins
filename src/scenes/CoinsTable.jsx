@@ -3,6 +3,7 @@ import CoinCard from "./../components/coins/CoinCard";
 import { allCoins } from "../data/all-coins/all-coin-markets";
 import { Sparklines, SparklinesLine, SparklinesSpots } from "react-sparklines";
 import TableRowData from "./../components/ui/TableRowData";
+import Pagination from "./../components/ui/Pagination";
 
 const colorCode = (value) => {
   const code = {
@@ -31,12 +32,12 @@ const CoinsTable = () => {
         </h1>
       </header>
       <main>
-        <div>
+        <>
           <div className="space-y-7 h-full overflow-y-scroll bg-blue-100/60 p-4 rounded-2xl">
             {allCoins.map((coin, i) => {
               return (
                 // ROW, h-40
-                <div className="items-center flex justify-around bg-blue-50  rounded-2xl py-4">
+                <div className="items-center border flex justify-around bg-blue-50  rounded-2xl py-4">
                   <CoinCard
                     data={{
                       name: allCoins[i].name,
@@ -108,8 +109,13 @@ const CoinsTable = () => {
                 </div>
               );
             })}
+
+            {/* PAGINATION */}
+            <div full>
+              <Pagination className="w-80 mx-auto" />
+            </div>
           </div>
-        </div>
+        </>
       </main>
     </div>
   );

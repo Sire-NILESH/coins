@@ -32,6 +32,11 @@ code {
   box-shadow: 16px 20px 200px #c9cfd9, -1px -1px 1px #ffffff;
 }
 
+.bg-neumorphic-color {
+  border-radius: 41px;
+  background: #edf3ff;
+}
+
 /* ----------------Error page-------------------- */
 .emoji-404 {
   position: relative;

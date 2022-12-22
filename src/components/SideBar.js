@@ -103,7 +103,7 @@ const SideBar = () => {
 
           <Link
             className="flex items-center px-4 text-sm py-2 mt-5 text-slate-700  transition-colors duration-300 transform dark:text-gray-200 hover:bg-purple-100 dark:hover:bg-gray-700 dark:hover:text-gray-200 "
-            link="/home"
+            to={"/coin"}
           >
             <svg
               className="w-5 h-5"
@@ -120,7 +120,7 @@ const SideBar = () => {
               />
             </svg>
 
-            <span className="mx-4 font-medium">Home</span>
+            <span className="mx-4 font-medium">Coin</span>
           </Link>
 
           <Link

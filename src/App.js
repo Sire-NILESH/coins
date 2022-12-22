@@ -8,6 +8,7 @@ import { useEffect, useState } from "react";
 import AllCoinsTable from "./scenes/AllCoinsTable";
 // import axios from "axios";
 import CoinsTable from "./scenes/CoinsTable";
+import Coin from "./scenes/Coin";
 
 function App() {
   // const [darkMode, setDarkMode] = useState("");
@@ -74,8 +75,11 @@ function App() {
       <Routes>
         <Route path="/" element={<MainPage />}>
           <Route path="overview" element={<AllCoins />} />
-          <Route path="watchlist" element={<WatchList />} />
+          <Route path="watchlist" element={<AllCoinsTable />} />
           <Route path="all-coins" element={<CoinsTable />} />
+          <Route path="/coin" element={<Coin />}>
+            <Route path="/:coinId" />
+          </Route>
         </Route>
         <Route path="/login" element={<Login />} />
         <Route path="*" element={<NotFound />} />

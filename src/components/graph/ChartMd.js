@@ -47,7 +47,7 @@ const options = {
       borderWidth: 1,
     },
     point: {
-      radius: 0,
+      radius: 1,
     },
   },
 };
