@@ -5,7 +5,7 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        bgLightMode: "#f5fafc",
+        bgLightMode: "#edf3ff",
       },
       fontFamily: {
         poppins: ["Poppins"],

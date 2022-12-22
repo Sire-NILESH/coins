@@ -22,14 +22,14 @@ code {
 
 .bg-neumorphic {
   border-radius: 41px;
-  background: #f5fafc;
-  box-shadow: 16px 16px 50px #dadfe0, -16px -16px 50px #ffffff;
+  background: #edf3ff;
+  box-shadow: 16px 16px 50px #c9cfd9, -16px -16px 50px #ffffff;
 }
 
 .bg-neumorphic-compos {
   border-radius: 41px;
-  background: #f5fafc;
-  box-shadow: 16px 20px 200px #d8e0e2, -16px -16px 50px #ffffff;
+  background: #edf3ff;
+  box-shadow: 16px 20px 200px #c9cfd9, -1px -1px 1px #ffffff;
 }
 
 /* ----------------Error page-------------------- */
