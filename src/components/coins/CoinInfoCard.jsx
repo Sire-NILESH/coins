@@ -22,7 +22,7 @@ const colorCode = (value) => {
 // w-[19rem] px-3 flex gap-2 flex-col
 const CoinInfoCard = (props) => {
   return (
-    <figure className="w-[19rem] px-3 flex gap-1 flex-col py-4">
+    <figure className="max-w-[19rem] px-3 flex gap-1 flex-col py-4 ">
       {/* TITLE */}
       <div className="flex items-center justify-between">
         <div className="flex items-center font-semibold text-base gap-1 ">
@@ -38,7 +38,7 @@ const CoinInfoCard = (props) => {
 
       {/* GRAPH */}
       <div className="flex-[2] my-2">
-        <ChartMd color={props.graphColor} />
+        <ChartMd color={props.graphColor} type="day" />
         {/* <SparkLine sparkLineData={props.data["sparkline_in_7d"].price} /> */}
       </div>
 

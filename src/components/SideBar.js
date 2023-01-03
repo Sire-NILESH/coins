@@ -2,8 +2,16 @@ import React, { useState } from "react";
 import Brand from "./ui/Brand";
 import { Link } from "react-router-dom";
 
-const SideBar = () => {
-  // const [selected, setSelected] = useState(siderBarNavItems[0].id);
+const ids = [
+  { id: "sdfke78ey", name: "Dashboard" },
+  { id: "n4wr8343", name: "All Coins" },
+  { id: "se3kj767u", name: "WatchList" },
+  { id: "kj88yf3dd", name: "Coin" },
+  { id: "cbrg8r7wet", name: "Place holder" },
+];
+
+const SideBar = function () {
+  const [selected, setSelected] = useState("sdfke78ey");
 
   // function selectNavItemHandler(navItem) {
   //   setSelected(navItem);
@@ -11,27 +19,36 @@ const SideBar = () => {
 
   return (
     <div className="hidden md:flex font-poppins flex-grow-0 flex-col w-64 h-[95vh] py-8 text-slate-200 text-center">
+      {/* BRANDING */}
       <Brand />
-
+      {/* PROFILE */}
       <div className="flex flex-col items-center mt-6 -mx-2">
         <img
-          className="object-cover w-20 h-20 mx-2 rounded-full"
+          className="object-cover w-20 h-20 mx-2 rounded-full border mt-1"
           src="https://images.unsplash.com/photo-1531427186611-ecfd6d936c79?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80"
           alt="avatar"
         />
-        <h4 className="mx-2 font-medium text-slate-200 dark:text-gray-200 hover:underline">
+        <h4 className="mx-2 font-medium text-slate-600 dark:text-gray-200 hover:underline">
           John Doe
         </h4>
         <p className="mx-2 mt-1 text-sm font-medium text-slate-400 dark:text-gray-400 hover:underline">
           john@example.com
         </p>
       </div>
-
+      {/* NAVIGATION */}
       <div className="flex flex-col justify-between flex-1 mt-6">
         <nav>
           <Link
-            className="flex items-center px-4 py-2 text-sm text-gray-700 bg-gray-100 dark:bg-gray-800 dark:text-gray-200 rounded-2xl"
-            to={"/overview"}
+            id={ids[0].id}
+            className={`flex items-center px-4 py-2 text-sm mt-5 rounded-2xl text-slate-700  transition-colors duration-200 ease-in-out dark:text-gray-200  dark:hover:bg-gray-700 dark:hover:text-gray-200 ${
+              selected === ids[0].id
+                ? "bg-gray-100"
+                : "bg-transparent hover:bg-gray-300/60"
+            }`}
+            to={"/dashboard"}
+            onClick={function (e) {
+              setSelected(ids[0].id);
+            }}
           >
             <svg
               className="w-5 h-5"
@@ -50,9 +67,18 @@ const SideBar = () => {
 
             <span className="mx-4 font-medium">Dashboard</span>
           </Link>
+
           <Link
-            className="flex items-center px-4 py-2 text-sm mt-5 text-slate-700  transition-colors duration-300 transform dark:text-gray-200 hover:bg-purple-100 dark:hover:bg-gray-700 dark:hover:text-gray-200 "
+            id={ids[1].id}
+            className={`flex items-center px-4 py-2 text-sm mt-5 rounded-2xl text-slate-700  transition-colors duration-200 transform dark:text-gray-200  dark:hover:bg-gray-700 dark:hover:text-gray-200 ${
+              selected === ids[1].id
+                ? "bg-gray-100"
+                : "bg-transparent hover:bg-gray-300/60"
+            }`}
             to={"/all-coins"}
+            onClick={function (e) {
+              setSelected(ids[1].id);
+            }}
           >
             <svg
               className="w-5 h-5"
@@ -73,8 +99,16 @@ const SideBar = () => {
           </Link>
 
           <Link
-            className="flex items-center px-4 py-2 text-sm mt-5 text-slate-700  transition-colors duration-300 transform dark:text-gray-200 hover:bg-purple-100 dark:hover:bg-gray-700 dark:hover:text-gray-200 "
+            id={ids[2].id}
+            className={`flex items-center px-4 py-2 text-sm mt-5 rounded-2xl text-slate-700  transition-colors duration-200 transform dark:text-gray-200  dark:hover:bg-gray-700 dark:hover:text-gray-200 ${
+              selected === ids[2].id
+                ? "bg-gray-100"
+                : "bg-transparent hover:bg-gray-300/60"
+            }`}
             to={"/watchlist"}
+            onClick={function (e) {
+              setSelected(ids[2].id);
+            }}
           >
             <svg
               className="w-5 h-5"
@@ -102,7 +136,15 @@ const SideBar = () => {
           </Link>
 
           <Link
-            className="flex items-center px-4 text-sm py-2 mt-5 text-slate-700  transition-colors duration-300 transform dark:text-gray-200 hover:bg-purple-100 dark:hover:bg-gray-700 dark:hover:text-gray-200 "
+            id={ids[3].id}
+            className={`flex items-center px-4 py-2 text-sm mt-5 rounded-2xl text-slate-700  transition-colors duration-200 transform dark:text-gray-200  dark:hover:bg-gray-700 dark:hover:text-gray-200 ${
+              selected === ids[3].id
+                ? "bg-gray-100"
+                : "bg-transparent hover:bg-gray-300/60"
+            }`}
+            onClick={function (e) {
+              setSelected(ids[3].id);
+            }}
             to={"/coin"}
           >
             <svg
@@ -124,8 +166,15 @@ const SideBar = () => {
           </Link>
 
           <Link
-            className="flex items-center px-4 text-sm py-2 mt-5 text-slate-700  transition-colors duration-300 transform dark:text-gray-200 hover:bg-purple-100 dark:hover:bg-gray-700 dark:hover:text-gray-200 "
-            href="/"
+            id={ids[4].id}
+            className={`flex items-center px-4 py-2 text-sm mt-5 rounded-2xl text-slate-700  transition-colors duration-200 transform dark:text-gray-200  dark:hover:bg-gray-700 dark:hover:text-gray-200 ${
+              selected === ids[4].id
+                ? "bg-gray-100"
+                : "bg-transparent hover:bg-gray-300/60"
+            }`}
+            onClick={function (e) {
+              setSelected(ids[4].id);
+            }}
           >
             <svg
               className="w-5 h-5"

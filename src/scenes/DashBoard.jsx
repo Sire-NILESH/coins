@@ -1,18 +1,16 @@
-import React, { useContext, useEffect, useState } from "react";
-import CardWrapper from "../components/ui/CardWrapper";
+import React, { useEffect } from "react";
 import CoinInfoCard from "../components/coins/CoinInfoCard";
 import { CoinState } from "../uitls/CoinContext";
 import { allCoins } from "../data/all-coins/all-coin-markets";
-import CoinCard from "../components/coins/CoinCard";
 import { CiCalendarDate } from "react-icons/ci";
 import CoinsReport from "../components/coins/CoinsReport";
-import HeaderButton from "./../components/ui/HeaderButton";
+import HeaderButton from "../components/ui/HeaderButton";
 // import axios from "axios";
 
-const AllCoins = () => {
+const DashBoard = () => {
   const currency = CoinState();
   useEffect(() => {
-    console.log(currency);
+    // console.log(currency);
   }, [currency]);
 
   // const [data, setData] = useState([]);
@@ -86,10 +84,16 @@ const AllCoins = () => {
           </div>
 
           {/* coins reports */}
-          <div className="w-full grid grid-cols-2 gap-x-32 gap-y-16 px-4">
-            <CoinsReport title="Winners" />
-            <CoinsReport title="Exchanges" className="row-span-2" />
-            <CoinsReport title="Losers" />
+          <div className="w-full grid grid-cols-2 grid-rows-2 gap-x-32 px-4">
+            <div className="col-span-1">
+              <CoinsReport title="Winners" />
+            </div>
+            <div className="col-span-1 row-span-2">
+              <CoinsReport title="Exchanges" />
+            </div>
+            <div className="col-span-1 mt-auto ">
+              <CoinsReport title="Losers" />
+            </div>
             {/* <CoinsReport title="Losers" /> */}
           </div>
         </div>
@@ -98,4 +102,4 @@ const AllCoins = () => {
   );
 };
 
-export default AllCoins;
+export default DashBoard;

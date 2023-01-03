@@ -37,6 +37,11 @@ code {
   background: #edf3ff;
 }
 
+.bg-neumorphic-color-blue {
+  border-radius: 38px;
+  background: linear-gradient(145deg, #2044bb, #1b3a9e);
+}
+
 /* ----------------Error page-------------------- */
 .emoji-404 {
   position: relative;

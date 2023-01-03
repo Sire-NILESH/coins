@@ -1,14 +1,14 @@
 import { Route, Routes } from "react-router-dom";
 import MainPage from "./scenes/MainPage";
 import Login from "./scenes/Login";
-import AllCoins from "./scenes/AllCoins";
 import NotFound from "./scenes/NotFound";
-import WatchList from "./scenes/WatchList";
+import WatchList from "./scenes/WatchList2";
 import { useEffect, useState } from "react";
 import AllCoinsTable from "./scenes/AllCoinsTable";
 // import axios from "axios";
-import CoinsTable from "./scenes/CoinsTable";
+import CoinsTable from "./scenes/WatchList";
 import Coin from "./scenes/Coin";
+import DashBoard from "./scenes/DashBoard";
 
 function App() {
   // const [darkMode, setDarkMode] = useState("");
@@ -74,11 +74,11 @@ function App() {
       {/* <SideBar /> */}
       <Routes>
         <Route path="/" element={<MainPage />}>
-          <Route path="overview" element={<AllCoins />} />
-          <Route path="watchlist" element={<AllCoinsTable />} />
-          <Route path="all-coins" element={<CoinsTable />} />
-          <Route path="/coin" element={<Coin />}>
-            <Route path="/:coinId" />
+          <Route path="dashboard" element={<DashBoard />} />
+          <Route path="watchlist" element={<CoinsTable />} />
+          <Route path="all-coins" element={<AllCoinsTable />} />
+          <Route path="coin" element={<Coin />}>
+            <Route path=":coinId" />
           </Route>
         </Route>
         <Route path="/login" element={<Login />} />

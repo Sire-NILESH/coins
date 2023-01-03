@@ -1,9 +1,10 @@
 import React from "react";
-import CoinCard from "./../components/coins/CoinCard";
+import CoinCard from "../components/coins/CoinCard";
 import { allCoins } from "../data/all-coins/all-coin-markets";
 import { Sparklines, SparklinesLine, SparklinesSpots } from "react-sparklines";
-import TableRowData from "./../components/ui/TableRowData";
-import Pagination from "./../components/ui/Pagination";
+import TableRowData from "../components/ui/TableRowData";
+import Pagination from "../components/ui/Pagination";
+import { BsCalendar4Week, BsClock } from "react-icons/bs";
 
 const colorCode = (value) => {
   const code = {
@@ -20,10 +21,10 @@ const colorCode = (value) => {
 };
 
 const Divider = () => {
-  return <div className="h-24 border-r-2"></div>;
+  return <div className="h-20 border-r-2"></div>;
 };
 
-const CoinsTable = () => {
+const WatchList = () => {
   return (
     <div className="space-y-6">
       <header>
@@ -37,7 +38,7 @@ const CoinsTable = () => {
             {allCoins.map((coin, i) => {
               return (
                 // ROW, h-40
-                <div className="items-center border flex justify-around bg-blue-50  rounded-2xl py-4">
+                <div className="items-center border flex justify-around bg-blue-50 rounded-2xl py-2">
                   <CoinCard
                     data={{
                       name: allCoins[i].name,
@@ -55,7 +56,7 @@ const CoinsTable = () => {
                   <Divider />
 
                   {/* SPARKLINES */}
-                  <div className="py-4 px-4 w-80 bg-blue-50 h-28">
+                  <div className="py-4 px-4 w-80 h-28">
                     <Sparklines data={coin.sparkline_in_7d.price} margin={6}>
                       <SparklinesLine
                         style={{
@@ -73,7 +74,8 @@ const CoinsTable = () => {
                         }}
                       />
                     </Sparklines>
-                    <p className="text-xs text-center text-slate-600">
+                    <p className="text-xs text-center text-slate-600 flex items-center gap-2 justify-center">
+                      <BsCalendar4Week className="inline h-3 w-3 text-slate-500" />
                       In past 7 days
                     </p>
                   </div>
@@ -81,16 +83,21 @@ const CoinsTable = () => {
                   {/* DIVIDER */}
                   <Divider />
 
+                  {/* 24 HOURS */}
                   <div className="py-3 px-4 w-80">
                     <div className="flex items-center justify-between">
-                      <p className="text-slate-900">Past 24h</p>
+                      <p className="text-slate-900 flex items-center gap-2">
+                        {" "}
+                        <BsClock className="inline h-4 w-4 text-slate-500" />
+                        Past 24h
+                      </p>
                       <div
                         className={`w-3 justify-self-end rounded-full h-3 ${colorCode(
                           allCoins[i].market_cap_change_24h
                         )}`}
                       />
                     </div>
-                    <div className="px-0">
+                    <>
                       <TableRowData
                         title={"Price"}
                         value={allCoins[i].price_change_24h}
@@ -104,7 +111,7 @@ const CoinsTable = () => {
                         title={"Market cap"}
                         value={allCoins[i].market_cap_change_24h}
                       />
-                    </div>
+                    </>
                   </div>
                 </div>
               );
@@ -121,4 +128,4 @@ const CoinsTable = () => {
   );
 };
 
-export default CoinsTable;
+export default WatchList;

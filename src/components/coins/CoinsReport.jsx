@@ -53,10 +53,14 @@ const CoinsReport = (props) => {
 
         <HeaderButton className="flex-shrink-0" title="View all" />
       </header>
-      <div className="space-y-4 px-8 w-full">
-        {allCoins.map((coin, index) => {
-          if (index < 3) return <CoinReportRow index={index} />;
-        })}
+      <div className="space-y-6 px-8 w-full">
+        {props.title !== "Exchanges"
+          ? allCoins.map((coin, index) => {
+              if (index < 3) return <CoinReportRow index={index} />;
+            })
+          : allCoins.map((coin, index) => {
+              if (index < 10) return <CoinReportRow index={index} />;
+            })}
       </div>
     </div>
   );
